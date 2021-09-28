@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:handson_flutter_new/counter/counter.dart';
 import 'package:handson_flutter_new/my_home_page.dart';
 
 void main() {
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.indigo,
       ),
-      home: const HomePage()
+      home: HomePage()
     );
   }
 }

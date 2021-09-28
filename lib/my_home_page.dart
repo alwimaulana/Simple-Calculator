@@ -10,12 +10,10 @@ class HomePage extends StatefulWidget {
 
 Column keyPadFun(){
   List col = [
-    ['1', '2', '3'],
-    ['4', '5', '6'],
-    ['7', '8', '9'],
-    ['.', '0', 'C'],
-    ['-', '+', '='],
-    ['x', '/']
+    ['1', '2', '3', '+'],
+    ['4', '5', '6', '-'],
+    ['7', '8', '9', 'x'],
+    ['C', '0', '=', '/'],
   ];
   return Column(
     children:
@@ -40,8 +38,6 @@ Widget _buttonOfNumberBuilder(String num) {
   return ButtonOfNumber(number: num,);
 }
 
-
-
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
@@ -52,11 +48,18 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       body: Center(
-          child:
-          Padding(
-            padding: const EdgeInsets.fromLTRB(25.0, 95.0, 0, 0),
-            child: keyPadFun(),
+          child: Column(
+            children: [
+              Expanded(child:
+                Text("ALWI", style: TextStyle(fontSize: 50, color: Colors.indigo),),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 200.0, 0, 0),
+                child: keyPadFun(),
+              )
+            ],
           )
+
           )
       );
 
