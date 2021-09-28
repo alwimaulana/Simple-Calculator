@@ -39,6 +39,39 @@ Widget _buttonOfNumberBuilder(String num) {
 }
 
 class _HomePageState extends State<HomePage> {
+
+  int first = 0, second = 0 ;
+  String opp ='';
+  String result = '', text = '';
+
+  void btnClick(String btnText) {
+    if (btnText == "C") {
+      result ="";
+      text = "";
+      first = 0;
+      second = 0;
+    } else if (btnText == "+" || btnText == "-" || btnText == "x" || btnText == "/") {
+      first = int.parse(text);
+      result = "";
+      opp = btnText;
+    } else if (btnText == "=") {
+      second = int.parse(text);
+      if (opp == "+") {
+        result = (first + second).toString();
+      } else if (opp == "-") {
+        result = (first - second).toString();
+      } else if (opp == "x") {
+        result = (first * second).toString();
+      } else if (opp == "/") {
+        result = (first ~/ second).toString();
+      }
+    } else {
+      result = int.parse(text + btnText).toString();
+    }
+    setState(() {
+      text = result;
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,7 +84,7 @@ class _HomePageState extends State<HomePage> {
           child: Column(
             children: [
               Expanded(child:
-                Text("ALWI", style: TextStyle(fontSize: 50, color: Colors.indigo),),
+                Text(text, style: TextStyle(fontSize: 50, color: Colors.indigo),),
               ),
               Padding(
                 padding: const EdgeInsets.fromLTRB(0, 200.0, 0, 0),
