@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'my_home_page.dart';
+
+
 
 // class ButtonOfNumber extends StatefulWidget {
 //   final String number ;
@@ -73,16 +76,17 @@ import 'package:flutter/material.dart';
 //
 class ButtonOfNumber extends StatelessWidget {
  // const ButtonOfNumber({Key? key}) : super(key: key);
-  final String number;
-  //final double? elevationSize;
-  const ButtonOfNumber({required this.number});
+    String number;
+    final Function click;
+    ButtonOfNumber({required this.number, required this.click});
+
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(0),
       child: MaterialButton(
-        onPressed: () {},
+        onPressed: () => click(number),
         child: Text(number,
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24.0, color: Colors.white)
         ),
