@@ -32,14 +32,14 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget _buttonOfNumberBuilder(String num) {
-    return ButtonOfNumber(number: num,click: _btnClick);
+    return ButtonOfNumber(number: num,click: btnClick);
   }
 
   int first = 0, second = 0 ;
   String opp ='';
   String result = '', text = '';
 
-  _btnClick(String btnText) {
+  btnClick(String btnText) {
     if (btnText == "C") {
       result ="";
       text = "";
